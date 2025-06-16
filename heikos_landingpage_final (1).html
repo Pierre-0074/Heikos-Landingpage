@@ -146,9 +146,8 @@
         }
 
         .cta-secondary {
-            display: inline-block;
-            background: transparent;
-            color: white;
+            background: rgba(255, 255, 255, 0.9);
+            color: #2d5a27;
             padding: 1rem 2.5rem;
             border: 2px solid white;
             border-radius: 50px;
@@ -157,6 +156,7 @@
             font-weight: 600;
             margin: 1rem;
             transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
 
         .cta-secondary:hover {
@@ -409,6 +409,185 @@
             opacity: 0.7;
         }
 
+        /* Cookie Banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(45, 90, 39, 0.95);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 1rem;
+            z-index: 1001;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+
+        .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .cookie-text {
+            flex: 1;
+            font-size: 0.9rem;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .cookie-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .cookie-accept {
+            background: #ff9900;
+            color: white;
+        }
+
+        .cookie-accept:hover {
+            background: #e68900;
+        }
+
+        .cookie-decline {
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+
+        .cookie-decline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Newsletter Section */
+        .newsletter-section {
+            background: linear-gradient(135deg, #2d5a27, #3d6b37);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .newsletter-content {
+            text-align: center;
+            color: white;
+        }
+
+        .newsletter-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 0.5rem;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .newsletter-btn {
+            padding: 0.75rem 1.5rem;
+            background: #ff9900;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .newsletter-btn:hover {
+            background: #e68900;
+        }
+
+        /* Downloads Section */
+        .downloads-section {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .downloads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .download-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .download-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .download-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .download-title {
+            font-size: 1.3rem;
+            color: #2d5a27;
+            margin-bottom: 1rem;
+        }
+
+        .download-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: #2d5a27;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #1f3d1b;
+        }
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
@@ -451,6 +630,27 @@
 
             .footer-logo {
                 height: 25px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-title {
+                font-size: 1.5rem;
+            }
+
+            .downloads-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cookie-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cookie-buttons {
+                justify-content: center;
             }
         }
 
@@ -632,6 +832,56 @@
         </div>
     </section>
 
+    <!-- Downloads Section -->
+    <section class="downloads-section">
+        <div class="container">
+            <h2 class="section-title">Kostenlose Downloads</h2>
+            <p style="text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 2rem;">
+                Hilfreiche Ressourcen für Ihre perfekte Reiseplanung
+            </p>
+            
+            <div class="downloads-grid">
+                <div class="download-card">
+                    <img src="https://raw.githubusercontent.com/Pierre-0074/Heikos-Landingpage/main/download_icon_checkliste.png" alt="Reise-Checkliste" class="download-icon">
+                    <h3 class="download-title">Reise-Checkliste</h3>
+                    <p class="download-description">
+                        Unsere bewährte Checkliste hilft Ihnen, nichts Wichtiges für Ihre Individualreise zu vergessen. Von Dokumenten bis zur Reiseapotheke.
+                    </p>
+                    <a href="#" class="download-btn" onclick="trackDownload('checkliste')">
+                        📄 PDF herunterladen
+                    </a>
+                </div>
+                
+                <div class="download-card">
+                    <img src="https://raw.githubusercontent.com/Pierre-0074/Heikos-Landingpage/main/download_icon_nachhaltigkeit.png" alt="Nachhaltigkeits-Guide" class="download-icon">
+                    <h3 class="download-title">Nachhaltigkeits-Guide</h3>
+                    <p class="download-description">
+                        Erfahren Sie, wie Sie verantwortungsvoll reisen können. Tipps für umweltfreundliche Unterkünfte, Transport und lokale Unterstützung.
+                    </p>
+                    <a href="#" class="download-btn" onclick="trackDownload('nachhaltigkeit')">
+                        🌱 PDF herunterladen
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2 class="newsletter-title">Bleiben Sie inspiriert</h2>
+                <p class="newsletter-subtitle">
+                    Erhalten Sie monatlich exklusive Reisetipps, versteckte Perlen und nachhaltige Reiseideen direkt in Ihr Postfach.
+                </p>
+                <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                    <input type="email" class="newsletter-input" placeholder="Ihre E-Mail-Adresse" required>
+                    <button type="submit" class="newsletter-btn">Anmelden</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
         <div class="container">
@@ -722,8 +972,75 @@
     <!-- Sticky CTA -->
     <a href="#beratung" class="sticky-cta">Beratung</a>
 
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <strong>🍪 Cookies & Datenschutz</strong><br>
+                Wir verwenden Cookies, um Ihnen die beste Erfahrung auf unserer Website zu bieten. Dazu gehören essenzielle Cookies für die Funktionalität und optionale Cookies für Analytics und Marketing.
+                <a href="#datenschutz" style="color: #ff9900;">Mehr erfahren</a>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+                <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Smooth scrolling for anchor links
+        // Cookie Banner Funktionalität
+        function showCookieBanner() {
+            const banner = document.getElementById('cookieBanner');
+            if (!localStorage.getItem('cookieConsent')) {
+                setTimeout(() => {
+                    banner.classList.add('show');
+                }, 2000);
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieBanner').classList.remove('show');
+            // Hier würden Analytics/Marketing Cookies aktiviert
+            console.log('Alle Cookies akzeptiert');
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookieBanner').classList.remove('show');
+            // Nur essenzielle Cookies
+            console.log('Nur notwendige Cookies akzeptiert');
+        }
+
+        // Newsletter Anmeldung
+        function subscribeNewsletter(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            
+            // Simulation der Newsletter-Anmeldung
+            alert('Vielen Dank! Sie haben sich erfolgreich für unseren Newsletter angemeldet.');
+            event.target.reset();
+            
+            // Hier würde die echte Newsletter-Anmeldung stattfinden
+            console.log('Newsletter-Anmeldung:', email);
+        }
+
+        // Download Tracking
+        function trackDownload(type) {
+            // Simulation des Downloads
+            if (type === 'checkliste') {
+                alert('Download gestartet: Reise-Checkliste PDF');
+                console.log('Download: Reise-Checkliste');
+            } else if (type === 'nachhaltigkeit') {
+                alert('Download gestartet: Nachhaltigkeits-Guide PDF');
+                console.log('Download: Nachhaltigkeits-Guide');
+            }
+            
+            // Hier würde der echte Download stattfinden
+            // window.open('path/to/pdf', '_blank');
+        }
+
+        // Smooth Scrolling für Navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -737,25 +1054,8 @@
             });
         });
 
-        // Add fade-in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-up');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all cards
-        document.querySelectorAll('.problem-card, .service-card, .testimonial').forEach(card => {
-            observer.observe(card);
-        });
+        // Cookie Banner beim Laden anzeigen
+        window.addEventListener('load', showCookieBanner);
     </script>
 </body>
 </html>
-
