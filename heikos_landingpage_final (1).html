@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Individuelle Reisen maßgeschneidert | Heikos Individualreisen</title>
+    <meta name="description" content="Keine Zeit für Reiseplanung? Wir erstellen Ihre maßgeschneiderte, nachhaltige Traumreise. Persönliche Beratung ✓ Authentische Erlebnisse ✓ Geprüfte Partner ✓">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2d5a27;
+        }
+
+        .logo img {
+            height: 45px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2d5a27;
+        }
+
+        .cta-header {
+            background: #ff9900;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-header:hover {
+            background: #e68a00;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 153, 0, 0.3);
+        }
+
+        /* Hero Section - Korrigierte Farben */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 100, 150, 0.3), rgba(0, 150, 200, 0.4)), url('https://raw.githubusercontent.com/Pierre-0074/Heikos-Landingpage/main/hero_karibik_strand.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .cta-primary {
+            display: inline-block;
+            background: #ff9900;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(255, 153, 0, 0.3);
+        }
+
+        .cta-primary:hover {
+            background: #e68a00;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 153, 0, 0.4);
+        }
+
+        .cta-secondary {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            padding: 1rem 2.5rem;
+            border: 2px solid white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary:hover {
+            background: white;
+            color: #2d5a27;
+        }
+
+        .trust-indicators {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            opacity: 0.95;
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Problem-Solution Section */
+        .problems {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2d5a27;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .problem-card {
+            background: #f8f9fa;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .problem-icon {
+            width: 80px;
+            height: 80px;
+            background: #2d5a27;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .problem-card h3 {
+            font-size: 1.5rem;
+            color: #2d5a27;
+            margin-bottom: 1rem;
+        }
+
+        .problem-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .service-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-card h4 {
+            color: #2d5a27;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #2d5a27;
+            position: relative;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #2d5a27;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #2d5a27, #1e3a1a);
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3a1a;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #ff9900;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ff9900;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            height: 30px;
+            width: auto;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .logo img {
+                height: 35px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .problems-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-indicators {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .footer-logo {
+                height: 25px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Sticky CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ff9900;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 5px 20px rgba(255, 153, 0, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .sticky-cta:hover {
+            background: #e68a00;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .sticky-cta {
+                bottom: 10px;
+                right: 10px;
+                padding: 0.8rem 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="https://raw.githubusercontent.com/Pierre-0074/Heikos-Landingpage/main/heikos_logo_gruen.png" alt="Heikos Individualreisen Logo">
+                <span>Heikos Individualreisen</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#nachhaltigkeit">Nachhaltigkeit</a></li>
+                <li><a href="#testimonials">Erfahrungen</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+            <a href="#beratung" class="cta-header">Kostenlose Beratung</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in-up">
+            <h1>Individuelle Reisen ohne Stress</h1>
+            <p class="subtitle">Maßgeschneidert für anspruchsvolle Entdecker</p>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">Sparen Sie Zeit bei der Planung und erleben Sie authentische Abenteuer mit unserem nachhaltigen Reiseservice</p>
+            
+            <div>
+                <a href="#beratung" class="cta-primary">Kostenlose Erstberatung vereinbaren</a>
+                <a href="#services" class="cta-secondary">Mehr erfahren</a>
+            </div>
+
+            <div class="trust-indicators">
+                <div class="trust-item">
+                    <span>⭐</span>
+                    <span>4.9/5 Kundenbewertung</span>
+                </div>
+                <div class="trust-item">
+                    <span>🌱</span>
+                    <span>Zertifiziert nachhaltig</span>
+                </div>
+                <div class="trust-item">
+                    <span>🏆</span>
+                    <span>15+ Jahre Erfahrung</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem-Solution Section -->
+    <section class="problems" id="problems">
+        <div class="container">
+            <h2 class="section-title">Kennen Sie diese Herausforderungen?</h2>
+            
+            <div class="problems-grid">
+                <div class="problem-card fade-in-up">
+                    <div class="problem-icon">⏰</div>
+                    <h3>Keine Zeit für stundenlange Reiseplanung?</h3>
+                    <p>Zwischen Job und Alltag bleibt keine Zeit für die aufwändige Recherche nach authentischen Reiseerlebnissen. Wir übernehmen die komplette Planung für Sie.</p>
+                </div>
+
+                <div class="problem-card fade-in-up">
+                    <div class="problem-icon">🎭</div>
+                    <h3>Angst vor 08/15-Tourismus?</h3>
+                    <p>Sie möchten einzigartige, authentische Erlebnisse statt überfüllter Touristenattraktionen. Unsere maßgeschneiderten Routen führen Sie zu versteckten Perlen.</p>
+                </div>
+
+                <div class="problem-card fade-in-up">
+                    <div class="problem-icon">🌱</div>
+                    <h3>Unsicher bei nachhaltigen Reiseoptionen?</h3>
+                    <p>Nachhaltigkeit ist wichtig, aber wie erkennt man echte von Greenwashing-Angeboten? Unsere geprüften Partner garantieren transparente Standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Ihr Weg zur perfekten Individualreise</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="https://raw.githubusercontent.com/Pierre-0074/Heikos-Landingpage/main/service_beratung_icon_v3_ohne_text.png" alt="Persönliche Beratung">
+                    </div>
+                    <h4>Persönliche Beratung</h4>
+                    <p>In einem ausführlichen Gespräch lernen wir Ihre Wünsche, Träume und Vorstellungen kennen. Jede Reise beginnt mit dem Verstehen Ihrer individuellen Bedürfnisse.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="https://raw.githubusercontent.com/Pierre-0074/Heikos-Landingpage/main/service_planung_icon_v2.png" alt="Maßgeschneiderte Routenplanung">
+                    </div>
+                    <h4>Maßgeschneiderte Routenplanung</h4>
+                    <p>Basierend auf Ihren Präferenzen erstellen wir eine einzigartige Route mit authentischen Erlebnissen, versteckten Perlen und nachhaltigen Unterkünften.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="https://raw.githubusercontent.com/Pierre-0074/Heikos-Landingpage/main/service_partnerschaften_icon_v2.png" alt="Nachhaltige Partnerschaften">
+                    </div>
+                    <h4>Nachhaltige Partnerschaften</h4>
+                    <p>Alle unsere Partner werden sorgfältig geprüft und entsprechen höchsten Nachhaltigkeitsstandards. Transparenz und Verantwortung stehen im Mittelpunkt.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="https://raw.githubusercontent.com/Pierre-0074/Heikos-Landingpage/main/icon_rundum_service.png" alt="Rundum-Service">
+                    </div>
+                    <h4>Rundum-Service</h4>
+                    <p>Von der ersten Idee bis zur Rückkehr kümmern wir uns um alles. Buchungen, Transfers, Notfall-Support - Sie können sich entspannt auf Ihr Abenteuer freuen.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="https://raw.githubusercontent.com/Pierre-0074/Heikos-Landingpage/main/icon_betreuung_headset.png" alt="Persönliche Betreuung">
+                    </div>
+                    <h4>Persönliche Betreuung</h4>
+                    <p>Auch während Ihrer Reise sind wir für Sie da. Mit unserer 24/7-Hotline und lokalen Ansprechpartnern sind Sie nie allein unterwegs.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="https://raw.githubusercontent.com/Pierre-0074/Heikos-Landingpage/main/siegel_nachhaltigkeit.png" alt="Nachhaltigkeits-Garantie">
+                    </div>
+                    <h4>Nachhaltigkeits-Garantie</h4>
+                    <p>Jede Reise kompensiert automatisch ihren CO2-Fußabdruck und unterstützt lokale Gemeinschaften. Reisen mit gutem Gewissen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Was unsere Kunden sagen</h2>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="testimonial-avatar">
+                        <img src="https://raw.githubusercontent.com/Pierre-0074/Heikos-Landingpage/main/avatar_sarah.jpg" alt="Sarah M.">
+                    </div>
+                    <p class="testimonial-text">"Endlich mal eine Reise, die perfekt zu mir passte! Heiko hat verstanden, was ich suchte - authentische Erlebnisse abseits der Touristenpfade. Die Beratung war so persönlich und die Umsetzung perfekt."</p>
+                    <p class="testimonial-author">Sarah M., Marketing-Managerin</p>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-avatar">
+                        <img src="https://raw.githubusercontent.com/Pierre-0074/Heikos-Landingpage/main/avatar_michael.jpg" alt="Michael K.">
+                    </div>
+                    <p class="testimonial-text">"Als Architekt schätze ich Qualität und Nachhaltigkeit. Heikos Team hat eine Reise zusammengestellt, die beide Aspekte perfekt vereint. Jeder Partner war sorgfältig ausgewählt."</p>
+                    <p class="testimonial-author">Michael K., Architekt</p>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-avatar">
+                        <img src="https://raw.githubusercontent.com/Pierre-0074/Heikos-Landingpage/main/avatar_lisa_tom_ohne_text.jpg" alt="Lisa & Tom R.">
+                    </div>
+                    <p class="testimonial-text">"Wir hatten keine Zeit für die Planung unserer Hochzeitsreise. Heiko hat uns eine traumhafte Route durch Südostasien zusammengestellt - nachhaltig, authentisch und unvergesslich!"</p>
+                    <p class="testimonial-author">Lisa & Tom R., Paar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta" id="beratung">
+        <div class="container">
+            <h2>Bereit für Ihr nächstes Abenteuer?</h2>
+            <p>Lassen Sie uns gemeinsam Ihre Traumreise planen. Kostenlose Erstberatung - unverbindlich und persönlich.</p>
+            <a href="mailto:info@heikos-individualreisen.de" class="cta-primary">Jetzt kostenlose Beratung vereinbaren</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontakt">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p>Heikos Individualreisen</p>
+                    <p>Musterstraße 123</p>
+                    <p>12345 Musterstadt</p>
+                    <p>Tel: +49 123 456789</p>
+                    <p>E-Mail: info@heikos-individualreisen.de</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <a href="#services">Persönliche Beratung</a>
+                    <a href="#services">Routenplanung</a>
+                    <a href="#services">Nachhaltige Partner</a>
+                    <a href="#services">24/7 Support</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Nachhaltigkeit</h4>
+                    <a href="#nachhaltigkeit">Unsere Standards</a>
+                    <a href="#nachhaltigkeit">Zertifizierte Partner</a>
+                    <a href="#nachhaltigkeit">CO2-Kompensation</a>
+                    <a href="#nachhaltigkeit">Lokale Projekte</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Rechtliches</h4>
+                    <a href="#impressum">Impressum</a>
+                    <a href="#datenschutz">Datenschutz</a>
+                    <a href="#agb">AGB</a>
+                    <a href="#widerruf">Widerruf</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <img src="https://raw.githubusercontent.com/Pierre-0074/Heikos-Landingpage/main/heikos_logo_freigestellt.png" alt="Heikos Individualreisen" class="footer-logo">
+                <p>&copy; 2025 Heikos Individualreisen. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA -->
+    <a href="#beratung" class="sticky-cta">Beratung</a>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.problem-card, .service-card, .testimonial').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
+
